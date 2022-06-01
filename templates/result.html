@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+	
+	{% block content %}
+
+<div class="canvas_div_pdf">
+
+	<p><u><b>RESULTS</b></u></p><br>
+		<p1>This work was supported by the PORTOS project co-financed by the Interreg Atlantic Area Programme through the European Regional Development Fund [grant number EAPA_784/2018]</p1><br><br>
+
+	<label><b>Name of the place/location: </b></label>
+	{{obj.Location}}<br>
+
+	<label><b>Name of the Country: </b></label>
+	{{obj.Country}}<br><br>
+
+	<label><b>Carbon intensity (CI) value: </b></label>
+	{{obj.ci_value}}<br><br><br><br>
+
+
+	<p2><b>Solar Calculations</p2></b><br><br>
+		
+	<label>Total panel area (m^2):</label>
+	{{obj.panel_area}}<br>
+
+	<label>Annual average solar radiation (kWh/m^2/year):</label>
+	{{obj.solar_radiation}}<br>
+
+	<label>Efficiency (%):</label>
+	{{obj.efficiency}}<br>
+
+	<label>Performance ratio:</label>
+	{{obj.performance_ratio}}<br><br>
+
+	<label><u>Solar Energy (kWh/year):</u></label>
+	{{obj.solar_energy}}<br><br>
+
+	<label><u>Solar Energy (kWh/year) after electrical loss:</u></label>
+	{{obj.solar_energy_loss}}<br><br>
+
+	<label><u>Solar Energy LCOE:</u></label>
+	{{obj.solar_LCOE}}<br><br>
+
+	<label><u>Yearly CO2 reduction in tonnes:</u></label>
+	{{obj.solar_co2}}<br><br><br>
+
+
+
+
+	<p2><b>Wind Calculations</p2></b><br><br>
+		
+	<label>Power coefficient of turbine:</label>
+	{{obj.turbine_cp}}<br>
+
+	<label>Pole height (m):</label>
+	{{obj.pole_height}}<br>
+
+	<label>Turbine radius (m):</label>
+	{{obj.turbine_radius}}<br>
+
+	<!--<label>Air density (kg/m^3):</label>
+	{{obj.air_density}}<br>-->
+
+	<label>Yearly average wind velocity (m/s):</label>
+	{{obj.velocity}}<br>
+
+	<label>Yearly working hours_wind (hr):</label>
+	{{obj.wind_hours}}<br><br>
+
+	<label><u>Wind Energy (kWh/year):</u></label>
+	{{obj.wind_energy}}</b><br><br>
+
+	<label><u>Wind Energy after electrical loss (kWh/year):</u></label>
+	{{obj.wind_energy_loss}}</b><br><br>
+
+	<label><u>Wind Energy LCOE:</u></label>
+	{{obj.wind_LCOE}}<br><br>
+
+	<label><u>Yearly CO2 reduction in tonnes:</u></label>
+	{{obj.wind_co2}}<br><br><br>
+
+
+
+	<p2><b>Tide Calculations</p2></b><br><br>
+		
+	<label>Power coefficient of turbine:</label>
+	{{obj.turbine_cp_tide}}<br>
+
+	<label>Tide range (m):</label>
+	{{obj.tide_range}}<br>
+
+	<label>Radius of turbine (m):</label>
+	{{obj.radius_turbine}}<br>
+
+	<!--<label>Water density (kg/m^3):</label>
+	{{obj.water_density}}<br>-->
+
+	<label>Yearly average current velocity (m/s):</label>
+	{{obj.mean_velocity}}<br>
+
+	<label>Yearly working hours_tide (hr):</label>
+	{{obj.tide_hours}}<br><br>
+
+	<label><u>Tidal Energy (kWh/year):</u></label>
+	{{obj.tidal_energy}}</b><br><br>
+
+	<label><u>Tidal Energy after electrical loss (kWh/year):</u></label>
+	{{obj.tidal_energy_loss}}</b><br><br>
+
+	<label><u>Tidal Energy LCOE:</u></label>
+	{{obj.tidal_LCOE}}<br><br>
+
+	<label><u>Yearly CO2 reduction in tonnes:</u></label>
+	{{obj.tide_co2}}<br><br><br>
+
+	
+
+	<p2><b>Wave Calculations</p2></b><br><br>
+		
+	<!--<label>Density of water (kg/m^3):</label>
+	{{obj.water_density_wave}}<br>-->
+
+	<label>Wave height (m):</label>
+	{{obj.wave_height}}<br>
+
+	<label>Wave period (s):</label>
+	{{obj.wave_period}}<br>
+
+	<label>PTO efficiency (%):</label>
+	{{obj.pto_efficiency}}<br>
+
+	<label>Yearly working hours_wave (hr):</label>
+	{{obj.wave_hours}}<br><br>
+
+	<label><u>Wave Energy (kWh/year):</u></label>
+	{{obj.wave_energy}}</b><br><br>
+
+	<label><u>Wave Energy (kWh/year) after electrical loss:</u></label>
+	{{obj.wave_energy_loss}}</b><br><br>
+
+	<label><u>Wave Energy LCOE:</u></label>
+	{{obj.wave_LCOE}}<br><br>
+
+	<label><u>Yearly CO2 reduction in tonnes:</u></label>
+	{{obj.wave_co2}}<br><br><br>
+
+
+
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+<canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
+
+<canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+
+<p2><b></p2></b><br><br>
+		
+	<label><b>Solar (%):</b></label>
+	{{obj.energy_percent_solar}}
+
+	<label><b>Wind (%):</b></label>
+	{{obj.energy_percent_wind}}<br>
+
+	<label><b>Tide (%):</b></label>
+	{{obj.energy_percent_tidal}}
+
+	<label><b>Wave (%):</b></label>
+	{{obj.energy_percent_wave}}<br><br><br>
+
+	<label><b>Yearly total CO2 reduction including all renewables (tonnes):</b></label>
+	{{obj.total_co2}}<br><br><br>
+
+
+</div>
+
+
+<button onclick="getPDF()">Download PDF</button>
+
+
+
+	{% endblock %}
+
+
