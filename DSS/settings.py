@@ -26,10 +26,7 @@ SECRET_KEY = 'django-insecure-pb&sc-wmmr3#1my$%jdp!=fxdht7vn(bs5+%fju+vgbu!6!#+l
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
     'https://portosdss.herokuapp.com/',
-    'portosdss.herokuapp.com'
     ]
 
 
