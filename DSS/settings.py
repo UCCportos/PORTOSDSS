@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://portosdss.herokuapp.com/',
+    'portosdss.herokuapp.com'
     ]
 
 
