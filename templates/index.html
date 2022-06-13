@@ -12,7 +12,10 @@
 			{% csrf_token %}
 			<label><b>Name of the place/location</b></label>
 			<input type="text" name="Location" step=any required=""><br><br>
-
+			
+			<label><b>Energy consumption of the port in kW</b></label>
+			<input type="number" name="port_consumption" step=any required=""><br><br>
+			
 			<label>Name of the Country</label>
 			<input type="text" name="Country" step=any required=""><br><br>
 
@@ -41,7 +44,7 @@
 			<p2><u>Note: Usually between 0.50 to 0.90.</u></p2><br><br>
 
 			
-			<label>Overall cost for operational years (Euros)</label>
+			<label>Cost of device (Euros)</label>
 			<input type="number" name="s_cost" step=any required=""><br><br>
 
 
@@ -77,7 +80,7 @@
 			<label>Yearly working hours_wind (hr)</label>
 			<input type="number" name="wind_hours" step=any required=""><br><br>
 
-			<label>Overall cost for operational years (Euros)</label>
+			<label>Cost of device (Euros)</label>
 			<input type="number" name="wi_cost" step=any required=""><br><br>
 
 			<label>Total number of operational years</label>
@@ -112,7 +115,7 @@
 			<label>Yearly working hours_tide (hr)</label>
 			<input type="number" name="tide_hours" step=any required=""><br><br>
 
-			<label>Overall cost for operational years (Euros)</label>
+			<label>Cost of device (Euros)</label>
 			<input type="number" name="t_cost" step=any required=""><br><br>
 
 			<label>Total number of operational years</label>
@@ -144,7 +147,7 @@
 			<label>Yearly working hours_wave (hr)</label>
 			<input type="number" name="wave_hours" step=any required=""><br><br>  
 
-			<label>Overall cost for operational years (Euros)</label>
+			<label>Cost of device (Euros)</label>
 			<input type="number" name="wa_cost" step=any required=""><br><br>
 
 			<label>Total number of operational years</label>
