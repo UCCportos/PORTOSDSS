@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'DSS.wsgi.application'
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'solar',
-        'USER': 'postgres',
-        'PASSWORD': 'Oe14d009$',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
