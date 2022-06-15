@@ -16,6 +16,7 @@ class Timeseries_data(models.Model):
 
 class Calculation(models.Model):
 	Location = models.CharField(max_length = 100, default = 0.0)
+	# port_consumption = models.CharField(max_length = 100, default = 0.0)
 	Country = models.CharField(max_length = 100, default = 0.0)
 	panel_area = models.CharField(max_length = 100, default = 0.0)
 	solar_radiation = models.CharField(max_length = 100, default = 0.0)

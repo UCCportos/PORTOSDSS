@@ -129,6 +129,7 @@ def index(request):
 
 		
 		response_forms.update({'Location' : request.POST['Location']})
+		# response_forms.update({'port_consumption' : float(request.POST['port_consumption'])})
 		response_forms.update({'Country' : request.POST['Country']})
 		response_forms.update({'panel_area' : float(request.POST['panel_area'])})
 		response_forms.update({'solar_radiation' : float(request.POST['solar_radiation'])})
