@@ -4,19 +4,21 @@
 
 		<title>DSS</title>
 		<style>
-			ul {
-			  list-style-type: none;
-			  margin: 0;
+      .header{
+        margin: 0;
 			  padding: 0;
 			  overflow: hidden;
 			  background-color: #346;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+			.menu {
+			 display: flex;
 			}
 
-			li {
-			  float: left;
-			}
-
-			li a {
+			.menu div a {
 			  display: block;
 			  color: white;
 			  text-align: center;
@@ -24,31 +26,38 @@
 			  text-decoration: none;
 			}
 
-			li a:hover:not(.active) {
+			.menu div a:hover:not(.active) {
 			  background-color: #111;
 			}
 
 			.active {
 			  background-color: #04AA6D;
 			}
+      .formHeading{
+        font-size: 2rem;
+        text-align: center;
+        text-decoration: underline;
+        line-height: 2px;
+      }
 		</style>
 	</head>
 	<body>
-		<ul>
-		  <li><a href="{% url 'index' %}">HOME</a></li>
-		  <!--<li><a href="{% url 'data' %}">Upload Data</a></li>-->
-		  <li><a href="{% url 'instruct' %}">Instructions</a></li>
-		  <li><a href="{% url 'contact' %}">Contact Us</a></li>
-		 		  
+    
+    <div class="header">
+      <div><img class="logo" src="/media/logo.jpeg" alt="Girl in a jacket" width="auto" height="100"></div>
+      <div class="menu">
+        <div><a href="{% url 'index' %}">HOME</a></div>
+        <!--<li><a href="{% url 'data' %}">Upload Data</a></li>-->
+        <div><a href="{% url 'instruct' %}">Instructions</a></div>
+        <div><a href="{% url 'contact' %}">Contact Us</a></div>
+      </div>
 
-		  
-		</ul>
+		</div>
 		{% block content %}
 		{% endblock %}
 
 	</body>
 </html>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 <script>
