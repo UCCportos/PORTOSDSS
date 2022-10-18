@@ -13,6 +13,9 @@
 	<!-- <label><b>Energy consumption of the port in kW: </b></label>
 	{{obj.port_consumption}}<br> -->
 
+	<label><b>Energy consumption of the port in kW: </b></label>
+	{{obj.port_consumption}}<br>
+
 	<label><b>Name of the Country: </b></label>
 	{{obj.Country}}<br><br>
 
@@ -32,7 +35,13 @@
 	{{obj.efficiency}}<br>
 
 	<label>Performance ratio:</label>
-	{{obj.performance_ratio}}<br><br>
+	{{obj.performance_ratio}}<br>
+
+	<label>Overall cost of the solar energy device (Euros):</label>
+	{{obj.s_cost}}<br>
+
+	<label>Total number of operational years:</label>
+	{{obj.solar_operational_years}}<br><br>
 
 	<label><u>Solar Energy (kWh/year):</u></label>
 	{{obj.solar_energy}}<br><br>
@@ -51,7 +60,7 @@
 
 	<p2><b>Wind Calculations</p2></b><br><br>
 		
-	<label>Power coefficient of turbine:</label>
+	<label>Power coefficient of wind turbine:</label>
 	{{obj.turbine_cp}}<br>
 
 	<label>Pole height (m):</label>
@@ -63,11 +72,17 @@
 	<!--<label>Air density (kg/m^3):</label>
 	{{obj.air_density}}<br>-->
 
-	<label>Yearly average wind velocity (m/s):</label>
+	<label>Yearly average wind velocity at the hub height (m/s):</label>
 	{{obj.velocity}}<br>
 
 	<label>Yearly working hours_wind (hr):</label>
-	{{obj.wind_hours}}<br><br>
+	{{obj.wind_hours}}<br>
+
+	<label>Overall cost of the wind energy device (Euros):</label>
+	{{obj.wi_cost}}<br>
+
+	<label>Total number of operational years:</label>
+	{{obj.wind_operational_years}}<br><br>
 
 	<label><u>Wind Energy (kWh/year):</u></label>
 	{{obj.wind_energy}}</b><br><br>
@@ -85,7 +100,7 @@
 
 	<p2><b>Tide Calculations</p2></b><br><br>
 		
-	<label>Power coefficient of turbine:</label>
+	<label>Power coefficient of tidal turbine:</label>
 	{{obj.turbine_cp_tide}}<br>
 
 	<label>Tide range (m):</label>
@@ -101,7 +116,13 @@
 	{{obj.mean_velocity}}<br>
 
 	<label>Yearly working hours_tide (hr):</label>
-	{{obj.tide_hours}}<br><br>
+	{{obj.tide_hours}}<br>
+
+	<label>Overall cost of the tidal energy device (Euros):</label>
+	{{obj.t_cost}}<br>
+
+	<label>Total number of operational years:</label>
+	{{obj.tidal_operational_years}}<br><br>
 
 	<label><u>Tidal Energy (kWh/year):</u></label>
 	{{obj.tidal_energy}}</b><br><br>
@@ -132,7 +153,13 @@
 	{{obj.pto_efficiency}}<br>
 
 	<label>Yearly working hours_wave (hr):</label>
-	{{obj.wave_hours}}<br><br>
+	{{obj.wave_hours}}<br>
+
+	<label>Overall cost of the wave energy device (Euros):</label>
+	{{obj.wa_cost}}<br>
+
+	<label>Total number of operational years:</label>
+	{{obj.wave_operational_years}}<br><br>
 
 	<label><u>Wave Energy (kWh/year):</u></label>
 	{{obj.wave_energy}}</b><br><br>

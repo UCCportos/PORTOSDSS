@@ -22,8 +22,8 @@ def index(request):
 			ci_value = float(request.POST['ci_value'])
 			solar_energy = (panel_area*solar_radiation*efficiency*performance_ratio)/100
 			solar_energy_loss = ((solar_energy) - (0.18*solar_energy))
-			solar_LCOE = (s_cost/(solar_operational_years*solar_energy))
-			solar_co2 = (solar_energy*ci_value)/(100*1000)
+			solar_LCOE = (s_cost/(solar_operational_years*solar_energy_loss))
+			solar_co2 = (solar_energy_loss*ci_value)/(100*1000)
 			print(solar_energy)
 		except:
 			panel_area = 0
@@ -43,8 +43,8 @@ def index(request):
 			wi_cost = float(request.POST['wi_cost'])
 			wind_operational_years = float(request.POST['wind_operational_years'])
 			wind_energy_loss = ((wind_energy) - (0.15*wind_energy))
-			wind_LCOE = (wi_cost/(wind_operational_years*wind_energy))
-			wind_co2 = (wind_energy*ci_value)/(100*1000)
+			wind_LCOE = (wi_cost/(wind_operational_years*wind_energy_loss))
+			wind_co2 = (wind_energy_loss*ci_value)/(100*1000)
 		except:
 			turbine_cp = 0
 			pole_height = 0
@@ -65,8 +65,8 @@ def index(request):
 			tidal_energy_loss = ((tidal_energy) - (0.16*tidal_energy))
 			t_cost = float(request.POST['t_cost'])
 			tidal_operational_years = float(request.POST['tidal_operational_years'])
-			tidal_LCOE = (t_cost/(tidal_operational_years*tidal_energy))
-			tide_co2 = (tidal_energy*ci_value)/(100*1000)
+			tidal_LCOE = (t_cost/(tidal_operational_years*tidal_energy_loss))
+			tide_co2 = (tidal_energy_loss*ci_value)/(100*1000)
 		except:
 			turbine_cp_tide = 0
 			water_depth = 0
@@ -88,8 +88,8 @@ def index(request):
 			wa_cost = float(request.POST['wa_cost'])
 			wave_operational_years = float(request.POST['wave_operational_years'])
 			wave_energy_loss = ((wave_energy) - (0.16*wave_energy))
-			wave_LCOE = (wa_cost/(wave_operational_years*wave_energy))
-			wave_co2 = (wave_energy*ci_value)/(100*1000)
+			wave_LCOE = (wa_cost/(wave_operational_years*wave_energy_loss))
+			wave_co2 = (wave_energy_loss*ci_value)/(100*1000)
 		except:
 			wave_height = 0
 			wave_period = 0
@@ -104,11 +104,11 @@ def index(request):
 			wave_co2 = 0
 
 		try:
-			total_energy = (solar_energy + wind_energy + tidal_energy + wave_energy)
-			energy_percent_solar = (solar_energy/total_energy)*100
-			energy_percent_wind = (wind_energy/total_energy)*100
-			energy_percent_tidal = (tidal_energy/total_energy)*100
-			energy_percent_wave = (wave_energy/total_energy)*100
+			total_energy = (solar_energy_loss + wind_energy_loss + tidal_energy_loss + wave_energy_loss)
+			energy_percent_solar = (solar_energy_loss/total_energy)*100
+			energy_percent_wind = (wind_energy_loss/total_energy)*100
+			energy_percent_tidal = (tidal_energy_loss/total_energy)*100
+			energy_percent_wave = (wave_energy_loss/total_energy)*100
 			total_co2 = (solar_co2 + wind_co2 + tide_co2 + wave_co2)
 		except:
 			total_energy = 0
@@ -129,38 +129,38 @@ def index(request):
 
 		
 		response_forms.update({'Location' : request.POST['Location']})
-		# response_forms.update({'port_consumption' : float(request.POST['port_consumption'])})
+		response_forms.update({'port_consumption' : round (float(request.POST['port_consumption']),2)})
 		response_forms.update({'Country' : request.POST['Country']})
-		response_forms.update({'panel_area' : float(request.POST['panel_area'])})
-		response_forms.update({'solar_radiation' : float(request.POST['solar_radiation'])})
-		response_forms.update({'efficiency' : float(request.POST['efficiency'])})
-		response_forms.update({'performance_ratio' : float(request.POST['performance_ratio'])})
-		response_forms.update({'turbine_cp' : float(request.POST['turbine_cp'])})
-		response_forms.update({'pole_height' : float(request.POST['pole_height'])})
-		response_forms.update({'turbine_radius': float(request.POST['turbine_radius'])})
+		response_forms.update({'panel_area' : round (float(request.POST['panel_area']),2)})
+		response_forms.update({'solar_radiation' : round (float(request.POST['solar_radiation']),2)})
+		response_forms.update({'efficiency' : round (float(request.POST['efficiency']),2)})
+		response_forms.update({'performance_ratio' : round (float(request.POST['performance_ratio']),2)})
+		response_forms.update({'turbine_cp' : round (float(request.POST['turbine_cp']),2)})
+		response_forms.update({'pole_height' : round (float(request.POST['pole_height']),2)})
+		response_forms.update({'turbine_radius': round (float(request.POST['turbine_radius']),2)})
 		#response_forms.update({'air_density': float(request.POST['air_density'])})
-		response_forms.update({'velocity': float(request.POST['velocity'])})
-		response_forms.update({'wind_hours': float(request.POST['wind_hours'])})
-		response_forms.update({'turbine_cp_tide': float(request.POST['turbine_cp_tide'])})
-		response_forms.update({'tide_range': float(request.POST['tide_range'])})
-		response_forms.update({'radius_turbine': float(request.POST['radius_turbine'])})
+		response_forms.update({'velocity': round (float(request.POST['velocity']),2)})
+		response_forms.update({'wind_hours': round (float(request.POST['wind_hours']),2)})
+		response_forms.update({'turbine_cp_tide': round (float(request.POST['turbine_cp_tide']),2)})
+		response_forms.update({'tide_range': round (float(request.POST['tide_range']),2)})
+		response_forms.update({'radius_turbine': round (float(request.POST['radius_turbine']),2)})
 		#response_forms.update({'water_density': float(request.POST['water_density'])})
-		response_forms.update({'mean_velocity': float(request.POST['mean_velocity'])})
-		response_forms.update({'tide_hours': float(request.POST['tide_hours'])})
+		response_forms.update({'mean_velocity': round (float(request.POST['mean_velocity']),2)})
+		response_forms.update({'tide_hours': round (float(request.POST['tide_hours']),2)})
 		#response_forms.update({'water_density_wave': float(request.POST['water_density_wave'])})
-		response_forms.update({'wave_height': float(request.POST['wave_height'])})
-		response_forms.update({'wave_period': float(request.POST['wave_period'])})
-		response_forms.update({'pto_efficiency': float(request.POST['pto_efficiency'])})
-		response_forms.update({'wave_hours': float(request.POST['wave_hours'])})
-		response_forms.update({'ci_value' : float(request.POST['ci_value'])})
-		response_forms.update({'s_cost' : float(request.POST['s_cost'])})
-		response_forms.update({'wi_cost' : float(request.POST['wi_cost'])})
-		response_forms.update({'t_cost' : float(request.POST['t_cost'])})
-		response_forms.update({'wa_cost' : float(request.POST['wa_cost'])})
-		response_forms.update({'solar_operational_years' : float(request.POST['solar_operational_years'])})
-		response_forms.update({'wind_operational_years' : float(request.POST['wind_operational_years'])})
-		response_forms.update({'tidal_operational_years' : float(request.POST['tidal_operational_years'])})
-		response_forms.update({'wave_operational_years' : float(request.POST['wave_operational_years'])})
+		response_forms.update({'wave_height': round (float(request.POST['wave_height']),2)})
+		response_forms.update({'wave_period': round (float(request.POST['wave_period']),2)})
+		response_forms.update({'pto_efficiency': round (float(request.POST['pto_efficiency']),2)})
+		response_forms.update({'wave_hours': round (float(request.POST['wave_hours']),2)})
+		response_forms.update({'ci_value' : round (float(request.POST['ci_value']),2)})
+		response_forms.update({'s_cost' : round (float(request.POST['s_cost']),2)})
+		response_forms.update({'wi_cost' : round (float(request.POST['wi_cost']),2)})
+		response_forms.update({'t_cost' : round (float(request.POST['t_cost']),2)})
+		response_forms.update({'wa_cost' : round (float(request.POST['wa_cost']),2)})
+		response_forms.update({'solar_operational_years' : round (float(request.POST['solar_operational_years']),2)})
+		response_forms.update({'wind_operational_years' : round (float(request.POST['wind_operational_years']),2)})
+		response_forms.update({'tidal_operational_years' : round (float(request.POST['tidal_operational_years']),2)})
+		response_forms.update({'wave_operational_years' : round (float(request.POST['wave_operational_years']),2)})
 		response_forms.update({'solar_energy' : solar_energy})
 		response_forms.update({'swept_area_wind' : swept_area_wind})
 		response_forms.update({'wind_energy' : wind_energy})

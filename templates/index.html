@@ -45,8 +45,11 @@
 			<p><u>Note: Usually between 0.50 to 0.90.</u></p><br><br>
 
 			
-			<label>Cost of device (Euros)</label>
+			<label>Overall cost of the solar energy device (Euros)</label>
 			<input oninput="saveStorage(this)" type="number" id="s_cost" name="s_cost" step=any required=""><br><br>
+
+			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
+
 
 
 			<label>Total number of operational years</label>
@@ -62,7 +65,7 @@
 			<label>Power coefficient of turbine</label>
 			<input oninput="saveStorage(this)" type="number" id="turbine_cp" name="turbine_cp" step=any required="">
 
-			<p2><u>Note: Horizontal axis wind turbine = 0.2 to 0.45 & Vertical axis wind turbine = 0.1 to 0.2</u></p2><br><br>
+			<p2><u>Note: Horizontal axis wind turbine = 0.2 to 0.45 & Vertical axis wind turbine = 0.1 to 0.25</u></p2><br><br>
 
 			<label>Pole height (m)</label>
 			<input oninput="saveStorage(this)" type="number" id="pole_height" name="pole_height" step=any required=""><br><br>
@@ -81,8 +84,10 @@
 			<label>Yearly working hours_wind (hr)</label>
 			<input oninput="saveStorage(this)" type="number" id="wind_hours" name="wind_hours" step=any required=""><br><br>
 
-			<label>Cost of device (Euros)</label>
+			<label>Overall cost of wind energy device (Euros)</label>
 			<input oninput="saveStorage(this)" type="number" id="wi_cost" name="wi_cost" step=any required=""><br><br>
+
+			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 			<label>Total number of operational years</label>
 			<input oninput="saveStorage(this)" type="number" id="wind_operational_years" name="wind_operational_years" step=any required=""><br><br>
@@ -91,10 +96,10 @@
 
 
 			<h1>Tide</h1>
-			<label>Power coefficient of turbine</label>
+			<label>Power coefficient of tidal turbine</label>
 			<input oninput="saveStorage(this)" type="number" id="turbine_cp_tide" name="turbine_cp_tide" step=any required="">
 
-			<p2><u>Note: Horizontal axis tidal turbine = 0.2 to 0.45 & Vertical axis tidal turbine = 0.1 to 0.2</u></p2><br><br>
+			<p2><u>Note: Horizontal axis tidal turbine = 0.2 to 0.4 & Vertical axis tidal turbine = 0.1 to 0.2</u></p2><br><br>
 
 			<label>Water depth (m)</label>
 			<input oninput="saveStorage(this)" type="number" id="water_depth" name="water_depth" step=any required=""><br><br>
@@ -110,14 +115,16 @@
 			<!--<label>Water density (kg/m^3)</label>
 			<input type="number" name="water_density" step=any required=""><br><br>-->
 
-			<label>Yearly average current velocity (m/s)</label>
+			<label>Yearly average current velocity  at the hub height (m/s)</label>
 			<input oninput="saveStorage(this)" type="number" id="mean_velocity" name="mean_velocity" step=any required=""><br><br>
 
 			<label>Yearly working hours_tide (hr)</label>
 			<input oninput="saveStorage(this)" type="number"  id="tide_hours" name="tide_hours" step=any required=""><br><br>
 
-			<label>Cost of device (Euros)</label>
+			<label>Overall cost of the tidal energy device (Euros)</label>
 			<input oninput="saveStorage(this)" type="number" id="t_cost" name="t_cost" step=any required=""><br><br>
+
+			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 			<label>Total number of operational years</label>
 			<input oninput="saveStorage(this)" type="number" id="tidal_operational_years" name="tidal_operational_years" step=any required=""><br><br>
@@ -148,8 +155,10 @@
 			<label>Yearly working hours_wave (hr)</label>
 			<input oninput="saveStorage(this)" type="number"  id="wave_hours"  name="wave_hours" step=any required=""><br><br>  
 
-			<label>Cost of device (Euros)</label>
+			<label>Overall cost of the wave energy device (Euros)</label>
 			<input oninput="saveStorage(this)" type="number" id="wa_cost"  name="wa_cost" step=any required=""><br><br>
+
+			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 			<label>Total number of operational years</label>
 			<input  oninput="saveStorage(this)" type="number" id="wave_operational_years"   name="wave_operational_years" step=any required=""><br><br>
@@ -160,5 +169,15 @@
 			<button type="submit"><b>Submit</b></button>
 		</form>
 	{% endblock %}
+
+	<img src="logo.jpg" alt="Italian Trulli">
+<script type="text/javascript">
+	function make_zero()
+	{
+		
+		document.getElementById('turbine_cp').value=0 ; 
+
+	}
+</script>
 
 
