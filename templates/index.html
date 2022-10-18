@@ -15,13 +15,13 @@
 			<input onchange="saveStorage(this)"  id="location" type="text" name="location" step=any required=""><br><br>
 			
 			<label><b>Energy consumption of the port in kW</b></label>
-			<input onchange="saveStorage(this)" type="number" name="port_consumption" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" name="port_consumption" step=any required=""><br><br>
 			
 			<label>Name of the Country</label>
-			<input onchange="saveStorage(this)"  id="country" type="text" name="country" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" id="country" type="text" name="country" step=any required=""><br><br>
 
 			<label>Carbon intensity (CI) value</label>
-			<input onchange="saveStorage(this)"   id="ci_value" type="number" name="ci_value" step=any required="">
+			<input onchange="saveStorage(this)" value="0"  id="ci_value" type="number" name="ci_value" step=any required="">
 			
 
 			<p><u>Note: Check instructions page to find the value.</u></p><br><br>
@@ -29,31 +29,31 @@
 			<h1>Solar</h1>
 			{% csrf_token %}
 			<label>Total panel area (m^2)</label>
-			<input onchange="saveStorage(this)"  type="number" id="panel_area" name="panel_area" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0"  type="number" id="panel_area" name="panel_area" step=any required=""><br><br>
 
 			<label>Annual average solar radiation (kWh/m^2/year)</label>
-			<input onchange="saveStorage(this)"  type="number" id="solar_radiation" name="solar_radiation" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="solar_radiation" name="solar_radiation" step=any required=""><br><br>
 			
 			<label>Efficiency (%)</label>
-			<input onchange="saveStorage(this)"  type="number" id="efficiency" name="efficiency" step=any required="">
+			<input onchange="saveStorage(this)" value="0" type="number" id="efficiency" name="efficiency" step=any required="">
 
 			<p><u>Note: Solar panels efficiencies = 13% to 23 % & high performance solar panels = upto 34%</u></p><br><br>
 			
 			<label>Performance ratio</label>
-			<input onchange="saveStorage(this)"  type="number" id="performance_ratio" name="performance_ratio" step=any required="">
+			<input onchange="saveStorage(this)" value="0" type="number" id="performance_ratio" name="performance_ratio" step=any required="">
 
 			<p><u>Note: Usually between 0.50 to 0.90.</u></p><br><br>
 
 			
 			<label>Overall cost of the solar energy device (Euros)</label>
-			<input  type="number" id="s_cost" name="s_cost" step=any required=""><br><br>
+			<input  type="number" id="s_cost" value="0" name="s_cost" step=any required=""><br><br>
 
 			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 
 
 			<label>Total number of operational years</label>
-			<input onchange="saveStorage(this)" type="number" id="solar_operational_years" name="solar_operational_years" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="solar_operational_years" name="solar_operational_years" step=any required=""><br><br>
 
 			
 
@@ -63,15 +63,15 @@
 			
 			<h1>Wind</h1>
 			<label>Power coefficient of turbine</label>
-			<input onchange="saveStorage(this)"  type="number" id="turbine_cp" name="turbine_cp" step=any required="">
+			<input onchange="saveStorage(this)" value="0"  type="number" id="turbine_cp" name="turbine_cp" step=any required="">
 
 			<p2><u>Note: Horizontal axis wind turbine = 0.2 to 0.45 & Vertical axis wind turbine = 0.1 to 0.25</u></p2><br><br>
 
 			<label>Pole height (m)</label>
-			<input onchange="saveStorage(this)"  type="number" id="pole_height" name="pole_height" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="pole_height" name="pole_height" step=any required=""><br><br>
 
 			<label>Turbine radius (m)</label>
-			<input onchange="saveStorage(this)"  type="number" id="turbine_radius" name="turbine_radius" step=any required="">
+			<input onchange="saveStorage(this)" value="0" type="number" id="turbine_radius" name="turbine_radius" step=any required="">
 
 			<p2><u>Note: Turbine radius should be smaller than pole height.</u></p2><br><br>
 
@@ -79,36 +79,36 @@
 			<input type="number" name="air_density" step=any required=""><br><br>-->
 
 			<label>Yearly average wind velocity (m/s)</label>
-			<input onchange="saveStorage(this)" type="number" id="velocity" name="velocity" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="velocity" name="velocity" step=any required=""><br><br>
 
 			<label>Yearly working hours_wind (hr)</label>
-			<input onchange="saveStorage(this)"  type="number" id="wind_hours" name="wind_hours" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0"  type="number" id="wind_hours" name="wind_hours" step=any required=""><br><br>
 
 			<label>Overall cost of wind energy device (Euros)</label>
-			<input onchange="saveStorage(this)" type="number" id="wi_cost" name="wi_cost" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="wi_cost" name="wi_cost" step=any required=""><br><br>
 
 			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 			<label>Total number of operational years</label>
-			<input  type="number" id="wind_operational_years" name="wind_operational_years" step=any required=""><br><br>
+			<input  type="number" value="0" id="wind_operational_years" name="wind_operational_years" step=any required=""><br><br>
 
 			
 
 
 			<h1>Tide</h1>
 			<label>Power coefficient of tidal turbine</label>
-			<input onchange="saveStorage(this)" type="number" id="turbine_cp_tide" name="turbine_cp_tide" step=any required="">
+			<input onchange="saveStorage(this)" value="0" type="number" id="turbine_cp_tide" name="turbine_cp_tide" step=any required="">
 
 			<p2><u>Note: Horizontal axis tidal turbine = 0.2 to 0.4 & Vertical axis tidal turbine = 0.1 to 0.2</u></p2><br><br>
 
 			<label>Water depth (m)</label>
-			<input onchange="saveStorage(this)" type="number" id="water_depth" name="water_depth" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="water_depth" name="water_depth" step=any required=""><br><br>
 
 			<label>Tide range (m)</label>
-			<input onchange="saveStorage(this)" type="number" id="tide_range" name="tide_range" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="tide_range" name="tide_range" step=any required=""><br><br>
 
 			<label>Radius of turbine (m)</label>
-			<input onchange="saveStorage(this)" type="number" id="radius_turbine" name="radius_turbine" step=any required="">
+			<input onchange="saveStorage(this)" value="0" type="number" id="radius_turbine" name="radius_turbine" step=any required="">
 
 			<p2><u>Note: Radius of turbine should be smaller than water depth.</u></p2><br><br>
 
@@ -116,18 +116,18 @@
 			<input type="number" name="water_density" step=any required=""><br><br>-->
 
 			<label>Yearly average current velocity  at the hub height (m/s)</label>
-			<input  type="number" id="mean_velocity" name="mean_velocity" step=any required=""><br><br>
+			<input  type="number" id="mean_velocity" value="0" name="mean_velocity" step=any required=""><br><br>
 
 			<label>Yearly working hours_tide (hr)</label>
-			<input  type="number"  id="tide_hours" name="tide_hours" step=any required=""><br><br>
+			<input  type="number"  id="tide_hours" value="0" name="tide_hours" step=any required=""><br><br>
 
 			<label>Overall cost of the tidal energy device (Euros)</label>
-			<input onchange="saveStorage(this)" type="number" id="t_cost" name="t_cost" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="t_cost" name="t_cost" step=any required=""><br><br>
 
 			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 			<label>Total number of operational years</label>
-			<input onchange="saveStorage(this)" type="number" id="tidal_operational_years" name="tidal_operational_years" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="tidal_operational_years" name="tidal_operational_years" step=any required=""><br><br>
 
 			
 
@@ -142,30 +142,26 @@
   -->
 
 			<label>Wave height (m)</label>
-			<input onchange="saveStorage(this)" type="number" id="wave_height" name="wave_height" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="wave_height" name="wave_height" step=any required=""><br><br>
 
 			<label>Wave period (s)</label>
-			<input onchange="saveStorage(this)" type="number" id="wave_period"   name="wave_period" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="wave_period"   name="wave_period" step=any required=""><br><br>
 
 			<label>Power take off efficiency (%)</label>
-			<input onchange="saveStorage(this)" type="number" id="pto_efficiency"  name="pto_efficiency" step=any required="">
+			<input onchange="saveStorage(this)" value="0" type="number" id="pto_efficiency"  name="pto_efficiency" step=any required="">
 
 			<p2><u>Oscillating water cloumn (OWC) = 11% to 31% , Overtopping devices (OTD) = 18% to 27% & Others = 4% to 45%.</u></p2><br><br>
 
 			<label>Yearly working hours_wave (hr)</label>
-			<input onchange="saveStorage(this)" type="number"  id="wave_hours"  name="wave_hours" step=any required=""><br><br>  
+			<input onchange="saveStorage(this)" value="0"  type="number"  id="wave_hours"  name="wave_hours" step=any required=""><br><br>  
 
 			<label>Overall cost of the wave energy device (Euros)</label>
-			<input onchange="saveStorage(this)" type="number" id="wa_cost"  name="wa_cost" step=any required=""><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="wa_cost"  name="wa_cost" step=any required=""><br><br>
 
 			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
 
 			<label>Total number of operational years</label>
-			<input onchange="saveStorage(this)"  type="number" id="wave_operational_years"   name="wave_operational_years" step=any required=""><br><br>
-
-			
-
-
+			<input onchange="saveStorage(this)" value="0" type="number" id="wave_operational_years"   name="wave_operational_years" step=any required=""><br><br>
 			<button type="submit"><b>Submit</b></button>
 		</form>
 	{% endblock %}
@@ -179,5 +175,6 @@
 
 	}
 </script>
+
 
 

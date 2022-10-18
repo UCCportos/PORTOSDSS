@@ -1,7 +1,7 @@
 
 $.when( $.ready ).then(function() {
-    console.log(document.getElementById("location"));
     const form_values_stored = sessionStorage.getItem("dss_form");
+    const csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value;
     if(form_values_stored){
         const form_value = JSON.parse(form_values_stored);
         var elements = document.getElementById("dss_form").elements;
@@ -9,8 +9,6 @@ $.when( $.ready ).then(function() {
         for (var i = 0, element; element = elements[i++];) {
            if(form_value[element.name]){
             element.value = form_value[element.name]
-           }else{
-            element.value = 0;
            }
            
         }
