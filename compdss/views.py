@@ -128,9 +128,9 @@ def index(request):
 		
 
 		
-		response_forms.update({'Location' : request.POST['Location']})
+		response_forms.update({'location' : request.POST['location']})
 		response_forms.update({'port_consumption' : round (float(request.POST['port_consumption']),2)})
-		response_forms.update({'Country' : request.POST['Country']})
+		response_forms.update({'Country' : request.POST['country']})
 		response_forms.update({'panel_area' : round (float(request.POST['panel_area']),2)})
 		response_forms.update({'solar_radiation' : round (float(request.POST['solar_radiation']),2)})
 		response_forms.update({'efficiency' : round (float(request.POST['efficiency']),2)})
@@ -195,8 +195,12 @@ def index(request):
 
 		if form.is_valid():
 			form.save() 
-			print('form is valid')
-			return redirect('result')
+			obj = Calculation.objects.all()[0]
+			chart_data = [solar_energy, wind_energy, tidal_energy, wave_energy]
+			chart_data_1 = [solar_energy_loss, wind_energy_loss, tidal_energy_loss, wave_energy_loss]
+			chart_data_2 = [energy_percent_solar, energy_percent_wind, energy_percent_tidal, energy_percent_wave]
+			return render(request, 'result.html', {'obj':obj, 'chart_data': chart_data, 'chart_data_1': chart_data_1, 'chart_data_2': chart_data_2})
+	
 		else:
 			print(form)
 

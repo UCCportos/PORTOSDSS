@@ -3,7 +3,6 @@
 	{% block content %}
 		<p><u>Please upload your file here</u></p><br>
 		<form method="post" enctype="multipart/form-data">
-		    {% csrf_token %}
 		    {{ form.as_p }}
 		    <button type="submit"><b>Upload</b></button>
 		  </form>
