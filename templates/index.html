@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 	
 	{% block content %}
-		<p class="formHeading"><b>Decision Support System</b></p>
-		<p><ul style="color: white; text-align: center;">NOTE: Please read the instructions before giving inputs.</ul></p>
+		<p class="formHeading"><b>Decision Support System</b></p><br>
+		<p class="Heading"><b>As part of the PORTOS Project, MaREI Centre (University College Cork) has built a Decision Support System which was tested by INNOSEA. The system was built using opensource tools and can be accessed worldwide. The purpose of this tool is to help ports and other users to determine which type of renewable energy best suits their energy demands. The tool calculates the electricity production and also other data based on their available natural resources.</b>
+		<p1><ul style="color: white; text-align: center;"> NOTE: Please read the instructions before giving inputs.</ul></p1>
 		<p></p>
 		{% load static %}  
 		<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
@@ -21,10 +22,7 @@
 			<input onchange="saveStorage(this)" value="0" id="country" type="text" name="country" step=any required=""><br><br>
 
 			<label>Carbon intensity (CI) value</label>
-			<input onchange="saveStorage(this)" value="0"  id="ci_value" type="number" name="ci_value" step=any required="">
-			
-
-			<p><u>Note: Check instructions page to find the value.</u></p><br><br>
+			<input onchange="saveStorage(this)" value="0"  id="ci_value" type="number" name="ci_value" step=any required=""> <u>Note: Check instructions page to find the value.</u><br><br>
 
 			<h1>Solar</h1>
 			{% csrf_token %}
@@ -35,20 +33,14 @@
 			<input onchange="saveStorage(this)" value="0" type="number" id="solar_radiation" name="solar_radiation" step=any required=""><br><br>
 			
 			<label>Efficiency (%)</label>
-			<input onchange="saveStorage(this)" value="0" type="number" id="efficiency" name="efficiency" step=any required="">
-
-			<p><u>Note: Solar panels efficiencies = 13% to 23 % & high performance solar panels = upto 34%</u></p><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="efficiency" name="efficiency" step=any required=""> <u>Note: Solar panels efficiencies = 13% to 23 % & high performance solar panels = upto 34%</u><br><br>
 			
 			<label>Performance ratio</label>
-			<input onchange="saveStorage(this)" value="0" type="number" id="performance_ratio" name="performance_ratio" step=any required="">
-
-			<p><u>Note: Usually between 0.50 to 0.90.</u></p><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="performance_ratio" name="performance_ratio" step=any required=""> <u>Note: Usually between 0.50 to 0.90.</u><br><br>
 
 			
 			<label>Overall cost of the solar energy device (Euros)</label>
-			<input  type="number" id="s_cost" value="0" name="s_cost" step=any required=""><br><br>
-
-			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="s_cost" name="s_cost" step=any required=""> <u>Note: Including capital & operational expenditures</u><br><br>
 
 
 
@@ -63,9 +55,7 @@
 			
 			<h1>Wind</h1>
 			<label>Power coefficient of turbine</label>
-			<input onchange="saveStorage(this)" value="0"  type="number" id="turbine_cp" name="turbine_cp" step=any required="">
-
-			<p2><u>Note: Horizontal axis wind turbine = 0.2 to 0.45 & Vertical axis wind turbine = 0.1 to 0.25</u></p2><br><br>
+			<input onchange="saveStorage(this)" value="0"  type="number" id="turbine_cp" name="turbine_cp" step=any required=""> <u>Note: Horizontal axis wind turbine = 0.2 to 0.45 & Vertical axis wind turbine = 0.1 to 0.25</u><br><br>
 
 			<label>Pole height (m)</label>
 			<input onchange="saveStorage(this)" value="0" type="number" id="pole_height" name="pole_height" step=any required=""><br><br>
@@ -85,12 +75,10 @@
 			<input onchange="saveStorage(this)" value="0"  type="number" id="wind_hours" name="wind_hours" step=any required=""><br><br>
 
 			<label>Overall cost of wind energy device (Euros)</label>
-			<input onchange="saveStorage(this)" value="0" type="number" id="wi_cost" name="wi_cost" step=any required=""><br><br>
-
-			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="wi_cost" name="wi_cost" step=any required=""> <u>Note: Including capital & operational expenditures</u><br><br>
 
 			<label>Total number of operational years</label>
-			<input  type="number" value="0" id="wind_operational_years" name="wind_operational_years" step=any required=""><br><br>
+			<input  onchange="saveStorage(this)" value="0" type="number" id="wind_operational_years" name="wind_operational_years" step=any required=""><br><br>
 
 			
 
@@ -116,15 +104,13 @@
 			<input type="number" name="water_density" step=any required=""><br><br>-->
 
 			<label>Yearly average current velocity  at the hub height (m/s)</label>
-			<input  type="number" id="mean_velocity" value="0" name="mean_velocity" step=any required=""><br><br>
+			<input  onchange="saveStorage(this)" value="0" type="number" id="mean_velocity" name="mean_velocity" step=any required=""><br><br>
 
 			<label>Yearly working hours_tide (hr)</label>
-			<input  type="number"  id="tide_hours" value="0" name="tide_hours" step=any required=""><br><br>
+			<input  onchange="saveStorage(this)" value="0" type="number"  id="tide_hours"  name="tide_hours" step=any required=""><br><br>
 
 			<label>Overall cost of the tidal energy device (Euros)</label>
-			<input onchange="saveStorage(this)" value="0" type="number" id="t_cost" name="t_cost" step=any required=""><br><br>
-
-			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="t_cost" name="t_cost" step=any required=""> <u>Note: Including capital & operational expenditures</u><br><br>
 
 			<label>Total number of operational years</label>
 			<input onchange="saveStorage(this)" value="0" type="number" id="tidal_operational_years" name="tidal_operational_years" step=any required=""><br><br>
@@ -150,15 +136,13 @@
 			<label>Power take off efficiency (%)</label>
 			<input onchange="saveStorage(this)" value="0" type="number" id="pto_efficiency"  name="pto_efficiency" step=any required="">
 
-			<p2><u>Oscillating water cloumn (OWC) = 11% to 31% , Overtopping devices (OTD) = 18% to 27% & Others = 4% to 45%.</u></p2><br><br>
+			<p2><u>Note: Oscillating water cloumn (OWC) = 11% to 31% , Overtopping devices (OTD) = 18% to 27% & Others = 4% to 45%.</u></p2><br><br>
 
 			<label>Yearly working hours_wave (hr)</label>
 			<input onchange="saveStorage(this)" value="0"  type="number"  id="wave_hours"  name="wave_hours" step=any required=""><br><br>  
 
 			<label>Overall cost of the wave energy device (Euros)</label>
-			<input onchange="saveStorage(this)" value="0" type="number" id="wa_cost"  name="wa_cost" step=any required=""><br><br>
-
-			<p2><u>Note: Including capital & operational expenditures</u></p2><br><br>
+			<input onchange="saveStorage(this)" value="0" type="number" id="wa_cost"  name="wa_cost" step=any required=""> <u>Note: Including capital & operational expenditures</u><br><br>
 
 			<label>Total number of operational years</label>
 			<input onchange="saveStorage(this)" value="0" type="number" id="wave_operational_years"   name="wave_operational_years" step=any required=""><br><br>
